@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package sumapi;
+
+option java_package = "com.proto.sumapi";
+option java_multiple_files = true;
+
+message SumAPIRequest {
+  int32 num1 = 1;
+  int32 num2 = 2;
+}
+
+message SumAPIResponse {
+  int32 result = 1;
+}
+
+service SumAPIService {
+  rpc GetSum(SumAPIRequest) returns (SumAPIResponse) { };
+}
