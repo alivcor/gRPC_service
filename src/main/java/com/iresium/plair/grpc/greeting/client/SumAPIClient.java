@@ -19,6 +19,7 @@ public class SumAPIClient {
         SumAPIRequest request = SumAPIRequest.newBuilder().setNum1(5).setNum2(6).build();
 
         SumAPIResponse response = syncClient.getSum(request);
+        System.out.println("The sum is " + response.getResult());
 
 
         channel.shutdown();
