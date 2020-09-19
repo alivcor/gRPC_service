@@ -11,6 +11,7 @@ public class SumAPIClient {
         System.out.println("Hello from gRPC Client");
 
         ManagedChannel channel = ManagedChannelBuilder.forAddress("localhost", 50051)
+                .usePlaintext()
                 .build();
 
         SumAPIServiceGrpc.SumAPIServiceBlockingStub syncClient = SumAPIServiceGrpc.newBlockingStub(channel);
